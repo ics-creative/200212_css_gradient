@@ -251,7 +251,7 @@ h1 {
   background-image: url("./images/bg-green.png");
   background-size: 800px 450px;
   background-repeat: no-repeat;
-  mask-image: repeating-linear-gradient(
+  -webkit-mask-image: repeating-linear-gradient(
     90deg,
     #fff 0 20px,
     transparent 20px 40px
@@ -272,7 +272,7 @@ h1 {
   background-image: url("./images/bg-yellow.png");
   background-size: 800px 450px;
   background-repeat: no-repeat;
-  mask-image: repeating-linear-gradient(
+  -webkit-mask-image: repeating-linear-gradient(
     90deg,
     transparent 0 20px,
     #fff 20px 40px
@@ -314,9 +314,9 @@ h1 {
     top: 0;
     left: 0;
     mix-blend-mode: screen;
-    mask-image: url("./images/bg-black.png");
-    mask-size: 800px 534px;
-    mask-repeat: no-repeat;
+    -webkit-mask-image: url("./images/bg-black.png");
+    -webkit-mask-size: 800px 534px;
+    -webkit-mask-repeat: no-repeat;
     animation-name: checkerBgAnimation;
     animation-duration: 3s;
     animation-timing-function: linear;
@@ -357,9 +357,9 @@ h1 {
 
 @keyframes checkerBgAnimation {
   0% {
-    mask-position: 800px 534px;
+    -webkit-mask-position: 800px 534px;
   }
   100% {
-    mask-position: -800px -534px;
+    -webkit-mask-position: -800px -534px;
   }
 }
