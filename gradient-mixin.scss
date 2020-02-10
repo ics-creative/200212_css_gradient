@@ -1,0 +1,197 @@
+@mixin clothoid-linear-gradient(
+  $angle: to bottom,
+  $color-start: #000000,
+  $color-end: #ffffff,
+  $start-point: 0
+) {
+  background-image: linear-gradient(
+    $angle,
+    $color-start 0 $start-point * 100%,
+    mix($color-end, $color-start, 70%) $start-point * 100% + (1 - $start-point) *
+      50%,
+    mix($color-end, $color-start, 85%) $start-point * 100% + (1 - $start-point) *
+      65%,
+    mix($color-end, $color-start, 92.5%) $start-point * 100% +
+      (1 - $start-point) * 75.5%,
+    mix($color-end, $color-start, 96.3%) $start-point * 100% +
+      (1 - $start-point) * 82.85%,
+    mix($color-end, $color-start, 98.1%) $start-point * 100% +
+      (1 - $start-point) * 88%,
+    $color-end
+  );
+}
+
+@mixin reverse-clothoid-linear-gradient(
+  $angle: to bottom,
+  $color-start: #000000,
+  $color-end: #ffffff,
+  $start-point: 0
+) {
+  background-image: linear-gradient(
+    $angle,
+    $color-start 0 $start-point * 100%,
+    mix($color-start, $color-end, 98.1%) $start-point * 100% +
+      (1 - $start-point) * 12%,
+    mix($color-start, $color-end, 96.3%) $start-point * 100% +
+      (1 - $start-point) * 17.15%,
+    mix($color-start, $color-end, 92.5%) $start-point * 100% +
+      (1 - $start-point) * 24.5%,
+    mix($color-start, $color-end, 85%) $start-point * 100% + (1 - $start-point) *
+      35%,
+    mix($color-start, $color-end, 70%) $start-point * 100% + (1 - $start-point) *
+      50%,
+    $color-end
+  );
+}
+
+@mixin clothoid-radial-gradient(
+  $position: closest-side at center,
+  $color-start: #000000,
+  $color-end: #ffffff,
+  $start-point: 0
+) {
+  background-image: radial-gradient(
+    $position,
+    $color-start 0 $start-point * 100%,
+    mix($color-end, $color-start, 70%) $start-point * 100% + (1 - $start-point) *
+      50%,
+    mix($color-end, $color-start, 85%) $start-point * 100% + (1 - $start-point) *
+      65%,
+    mix($color-end, $color-start, 92.5%) $start-point * 100% +
+      (1 - $start-point) * 75.5%,
+    mix($color-end, $color-start, 96.3%) $start-point * 100% +
+      (1 - $start-point) * 82.85%,
+    mix($color-end, $color-start, 98.1%) $start-point * 100% +
+      (1 - $start-point) * 88%,
+    $color-end
+  );
+}
+
+@mixin reverse-clothoid-radial-gradient(
+  $position: closest-side at center,
+  $color-start: #000000,
+  $color-end: #ffffff,
+  $start-point: 0
+) {
+  background-image: radial-gradient(
+    $position,
+    $color-start 0 $start-point * 100%,
+    mix($color-start, $color-end, 98.1%) $start-point * 100% +
+      (1 - $start-point) * 12%,
+    mix($color-start, $color-end, 96.3%) $start-point * 100% +
+      (1 - $start-point) * 17.15%,
+    mix($color-start, $color-end, 92.5%) $start-point * 100% +
+      (1 - $start-point) * 24.5%,
+    mix($color-start, $color-end, 85%) $start-point * 100% + (1 - $start-point) *
+      35%,
+    mix($color-start, $color-end, 70%) $start-point * 100% + (1 - $start-point) *
+      50%,
+    $color-end
+  );
+}
+
+@mixin sine-linear-gradient(
+  $angle: to bottom,
+  $color-start: #000000,
+  $color-end: #ffffff
+) {
+  background-image: linear-gradient(
+    $angle,
+    $color-start,
+    mix($color-end, $color-start, 2.4%) 10%,
+    mix($color-end, $color-start, 9.5%) 20%,
+    mix($color-end, $color-start, 20.6%) 30%,
+    mix($color-end, $color-start, 34.5%) 40%,
+    mix($color-end, $color-start, 50%) 50%,
+    mix($color-end, $color-start, 65.5%) 60%,
+    mix($color-end, $color-start, 79.4%) 70%,
+    mix($color-end, $color-start, 90.5%) 80%,
+    mix($color-end, $color-start, 97.6%) 90%,
+    $color-end
+  );
+}
+
+@mixin sine-radial-gradient(
+  $position: closest-side at center,
+  $color-start: #000000,
+  $color-end: #ffffff
+) {
+  background-image: radial-gradient(
+    $position,
+    $color-start,
+    mix($color-end, $color-start, 2.4%) 10%,
+    mix($color-end, $color-start, 9.5%) 20%,
+    mix($color-end, $color-start, 20.6%) 30%,
+    mix($color-end, $color-start, 34.5%) 40%,
+    mix($color-end, $color-start, 50%) 50%,
+    mix($color-end, $color-start, 65.5%) 60%,
+    mix($color-end, $color-start, 79.4%) 70%,
+    mix($color-end, $color-start, 90.5%) 80%,
+    mix($color-end, $color-start, 97.6%) 90%,
+    $color-end
+  );
+}
+
+@mixin repeating-sine-linear-gradient(
+  $angle: to bottom,
+  $color-start: #000000,
+  $color-end: #ffffff,
+  $repetition: 1
+) {
+  background-image: repeating-linear-gradient(
+    $angle,
+    $color-start,
+    mix($color-end, $color-start, 2.4%) 100 / $repetition * 0.05%,
+    mix($color-end, $color-start, 9.5%) 100 / $repetition * 0.1%,
+    mix($color-end, $color-start, 20.6%) 100 / $repetition * 0.15%,
+    mix($color-end, $color-start, 34.5%) 100 / $repetition * 0.2%,
+    mix($color-end, $color-start, 50%) 100 / $repetition * 0.25%,
+    mix($color-end, $color-start, 65.5%) 100 / $repetition * 0.3%,
+    mix($color-end, $color-start, 79.4%) 100 / $repetition * 0.35%,
+    mix($color-end, $color-start, 90.5%) 100 / $repetition * 0.4%,
+    mix($color-end, $color-start, 97.6%) 100 / $repetition * 0.45%,
+    $color-end 100 / $repetition * 0.5%,
+    mix($color-end, $color-start, 97.6%) 100 / $repetition * 0.55%,
+    mix($color-end, $color-start, 90.5%) 100 / $repetition * 0.6%,
+    mix($color-end, $color-start, 79.4%) 100 / $repetition * 0.65%,
+    mix($color-end, $color-start, 65.5%) 100 / $repetition * 0.7%,
+    mix($color-end, $color-start, 50%) 100 / $repetition * 0.75%,
+    mix($color-end, $color-start, 34.5%) 100 / $repetition * 0.8%,
+    mix($color-end, $color-start, 20.6%) 100 / $repetition * 0.85%,
+    mix($color-end, $color-start, 9.5%) 100 / $repetition * 0.9%,
+    mix($color-end, $color-start, 2.4%) 100 / $repetition * 0.95%,
+    $color-start 100 / $repetition * 1%
+  );
+}
+
+@mixin repeating-sine-radial-gradient(
+  $position: circle at center,
+  $color-start: #000000,
+  $color-end: #ffffff,
+  $repetition: 1
+) {
+  background-image: repeating-radial-gradient(
+    $position,
+    $color-start,
+    mix($color-end, $color-start, 2.4%) 100 / $repetition * 0.05%,
+    mix($color-end, $color-start, 9.5%) 100 / $repetition * 0.1%,
+    mix($color-end, $color-start, 20.6%) 100 / $repetition * 0.15%,
+    mix($color-end, $color-start, 34.5%) 100 / $repetition * 0.2%,
+    mix($color-end, $color-start, 50%) 100 / $repetition * 0.25%,
+    mix($color-end, $color-start, 65.5%) 100 / $repetition * 0.3%,
+    mix($color-end, $color-start, 79.4%) 100 / $repetition * 0.35%,
+    mix($color-end, $color-start, 90.5%) 100 / $repetition * 0.4%,
+    mix($color-end, $color-start, 97.6%) 100 / $repetition * 0.45%,
+    $color-end 100 / $repetition * 0.5%,
+    mix($color-end, $color-start, 97.6%) 100 / $repetition * 0.55%,
+    mix($color-end, $color-start, 90.5%) 100 / $repetition * 0.6%,
+    mix($color-end, $color-start, 79.4%) 100 / $repetition * 0.65%,
+    mix($color-end, $color-start, 65.5%) 100 / $repetition * 0.7%,
+    mix($color-end, $color-start, 50%) 100 / $repetition * 0.75%,
+    mix($color-end, $color-start, 34.5%) 100 / $repetition * 0.8%,
+    mix($color-end, $color-start, 20.6%) 100 / $repetition * 0.85%,
+    mix($color-end, $color-start, 9.5%) 100 / $repetition * 0.9%,
+    mix($color-end, $color-start, 2.4%) 100 / $repetition * 0.95%,
+    $color-start 100 / $repetition * 1%
+  );
+}
