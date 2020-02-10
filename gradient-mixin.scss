@@ -1,3 +1,6 @@
+/**
+ * クロソイド曲線の線形グラデーション
+ */
 @mixin clothoid-linear-gradient(
   $angle: to bottom,
   $color-start: #000000,
@@ -21,6 +24,9 @@
   );
 }
 
+/**
+ * クロソイド曲線の線形グラデーション（逆の変化曲線）
+ */
 @mixin reverse-clothoid-linear-gradient(
   $angle: to bottom,
   $color-start: #000000,
@@ -44,6 +50,9 @@
   );
 }
 
+/**
+ * クロソイド曲線の放射状グラデーション
+ */
 @mixin clothoid-radial-gradient(
   $position: closest-side at center,
   $color-start: #000000,
@@ -67,6 +76,9 @@
   );
 }
 
+/**
+ * クロソイド曲線の放射状グラデーション（逆の変化曲線）
+ */
 @mixin reverse-clothoid-radial-gradient(
   $position: closest-side at center,
   $color-start: #000000,
@@ -90,6 +102,9 @@
   );
 }
 
+/**
+ * サインカーブの線形グラデーション
+ */
 @mixin sine-linear-gradient(
   $angle: to bottom,
   $color-start: #000000,
@@ -111,6 +126,9 @@
   );
 }
 
+/**
+ * サインカーブの放射状グラデーション
+ */
 @mixin sine-radial-gradient(
   $position: closest-side at center,
   $color-start: #000000,
@@ -132,6 +150,9 @@
   );
 }
 
+/**
+ * サインカーブの繰り返し線形グラデーション
+ */
 @mixin repeating-sine-linear-gradient(
   $angle: to bottom,
   $color-start: #000000,
@@ -164,6 +185,9 @@
   );
 }
 
+/**
+ * サインカーブの繰り返し放射状グラデーション
+ */
 @mixin repeating-sine-radial-gradient(
   $position: circle at center,
   $color-start: #000000,

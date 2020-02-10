@@ -1,4 +1,8 @@
 @import "gradient-mixin";
+
+/**
+ * 共通CSS
+ */
 * {
   box-sizing: border-box;
   &:after,
@@ -32,19 +36,6 @@ h1 {
     letter-spacing: 0.02em;
     font-weight: bold;
   }
-  &.linear {
-    &:after {
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
-    }
-  }
-  &.clothoid {
-    &:after {
-      @include clothoid-linear-gradient(
-        $color-start: rgba(0, 0, 0, 0),
-        $color-end: rgba(0, 0, 0, 0.85)
-      );
-    }
-  }
   img {
     display: block;
   }
@@ -60,6 +51,34 @@ h1 {
   height: 450px;
   margin: 0 auto 48px;
 }
+
+
+
+/**
+ * 通常のグラデーション
+ */
+.linear {
+  &:after {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+  }
+}
+
+/**
+ * クロソイド曲線のグラデーション
+ */
+.clothoid {
+  &:after {
+    @include clothoid-linear-gradient(
+    $angle:to top,
+            $color-start: rgba(0, 0, 0, 0.85),
+            $color-end: rgba(0, 0, 0, 0)
+    );
+  }
+}
+
+/**
+ * 三角関数のグラデーション
+ */
 .sine {
   @include repeating-sine-radial-gradient(
     $color-start: #6fb8d9,
@@ -68,6 +87,9 @@ h1 {
   );
 }
 
+/**
+ * 市松模様
+ */
 .checker {
   background-image: repeating-linear-gradient(
       90deg,
@@ -78,6 +100,9 @@ h1 {
   background-blend-mode: difference;
 }
 
+/**
+ * 周辺露光
+ */
 .exposure {
   position: relative;
 
@@ -101,7 +126,10 @@ h1 {
   }
 }
 
-.brand_check {
+/**
+ * 有名ブランドのチェック
+ */
+.brandCheck {
   background-image: repeating-linear-gradient(
       -45deg,
       transparent 0px 3.535px,
@@ -165,6 +193,9 @@ h1 {
     270px -5px, 0 150px, 0 210px, 0 270px, 180px 0, 240px 0, 0 180px, 0 240px;
 }
 
+/**
+ * 波紋のアニメーション
+ */
 .wave-box {
   background-color: #6fb8d9;
   position: relative;
@@ -185,14 +216,15 @@ h1 {
     );
     filter: blur(8px);
     mix-blend-mode: soft-light;
-    animation-name: wave-animation;
+    animation-name: waveAnimation;
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
   }
 }
 
-@keyframes wave-animation {
+
+@keyframes waveAnimation {
   0% {
     transform: scale(0.1);
     opacity: 1;
@@ -200,5 +232,134 @@ h1 {
   100% {
     transform: scale(2);
     opacity: 0;
+  }
+}
+
+/**
+ * ストライプのアニメーション
+ */
+.stripeAnimation {
+  position: relative;
+}
+
+.bg-green {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("./images/bg-green.png");
+  background-size: 800px 450px;
+  background-repeat: no-repeat;
+  mask-image: repeating-linear-gradient(
+    90deg,
+    #fff 0 20px,
+    transparent 20px 40px
+  );
+  animation-name: stripeAnimation1;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.bg-yellow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("./images/bg-yellow.png");
+  background-size: 800px 450px;
+  background-repeat: no-repeat;
+  mask-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 20px,
+    #fff 20px 40px
+  );
+  animation-name: stripeAnimation2;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes stripeAnimation1 {
+  0% {
+    background-position: 0 450px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes stripeAnimation2 {
+  0% {
+    background-position: 0 -450px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/**
+ * 波紋のアニメーション
+ */
+.combinedAnimation {
+  position: relative;
+  width: 800px;
+  height: 534px;
+  img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: screen;
+    mask-image: url("./images/bg-black.png");
+    mask-size: 800px 534px;
+    mask-repeat: no-repeat;
+    animation-name: checkerBgAnimation;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+.checkerAnimation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      90deg,
+      white 0 48px,
+      transparent 48px 96px
+    ),
+    repeating-linear-gradient(180deg, transparent 0 48px, white 48px 96px);
+  background-size: 800px 534px, 800px 534px;
+  background-repeat: no-repeat;
+  background-blend-mode: difference;
+  animation-name: checkerAnimation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes checkerAnimation {
+  0% {
+    background-position: 0 534px, 800px 0;
+  }
+  50% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 -534px, -800px 0;
+  }
+}
+
+@keyframes checkerBgAnimation {
+  0% {
+    mask-position: 800px 534px;
+  }
+  100% {
+    mask-position: -800px -534px;
   }
 }
