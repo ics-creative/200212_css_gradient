@@ -215,8 +215,7 @@ h1 {
   animation-name: checkerBgAnimation;
   animation-duration: 3s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  mix-blend-mode: darken; }
+  animation-iteration-count: infinite; }
   .combinedAnimation img {
     display: block;
     position: absolute;
