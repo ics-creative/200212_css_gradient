@@ -305,19 +305,20 @@ h1 {
   position: relative;
   width: 800px;
   height: 534px;
+  -webkit-mask-image: url("./images/bg-black.png");
+  -webkit-mask-size: 800px 534px;
+  -webkit-mask-repeat: no-repeat;
+  animation-name: checkerBgAnimation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  mix-blend-mode: darken;
   img {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     mix-blend-mode: screen;
-    -webkit-mask-image: url("./images/bg-black.png");
-    -webkit-mask-size: 800px 534px;
-    -webkit-mask-repeat: no-repeat;
-    animation-name: checkerBgAnimation;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
   }
 }
 
@@ -328,9 +329,9 @@ h1 {
   background-image: repeating-linear-gradient(
       90deg,
       white 0 48px,
-      transparent 48px 96px
+      black 48px 96px
     ),
-    repeating-linear-gradient(180deg, transparent 0 48px, white 48px 96px);
+    repeating-linear-gradient(180deg, black 0 48px, white 48px 96px);
   background-size: 800px 534px, 800px 534px;
   background-repeat: no-repeat;
   background-blend-mode: difference;
