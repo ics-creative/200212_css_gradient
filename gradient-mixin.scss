@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
  * クロソイド曲線の線形グラデーション
  */
@@ -113,15 +115,15 @@
   background-image: linear-gradient(
     $angle,
     $color-start,
-    mix($color-end, $color-start, 2.4%) 10%,
-    mix($color-end, $color-start, 9.5%) 20%,
-    mix($color-end, $color-start, 20.6%) 30%,
-    mix($color-end, $color-start, 34.5%) 40%,
-    mix($color-end, $color-start, 50%) 50%,
-    mix($color-end, $color-start, 65.5%) 60%,
-    mix($color-end, $color-start, 79.4%) 70%,
-    mix($color-end, $color-start, 90.5%) 80%,
-    mix($color-end, $color-start, 97.6%) 90%,
+    mix($color-end, $color-start, math.sin(90deg) * 100),
+    mix($color-end, $color-start, math.sin(80deg) * 100),
+    mix($color-end, $color-start, math.sin(70deg) * 100),
+    mix($color-end, $color-start, math.sin(60deg) * 100),
+    mix($color-end, $color-start, math.sin(50deg) * 100),
+    mix($color-end, $color-start, math.sin(40deg) * 100),
+    mix($color-end, $color-start, math.sin(30deg) * 100),
+    mix($color-end, $color-start, math.sin(20deg) * 100),
+    mix($color-end, $color-start, math.sin(10deg) * 100),
     $color-end
   );
 }
@@ -137,15 +139,15 @@
   background-image: radial-gradient(
     $position,
     $color-start,
-    mix($color-end, $color-start, 2.4%) 10%,
-    mix($color-end, $color-start, 9.5%) 20%,
-    mix($color-end, $color-start, 20.6%) 30%,
-    mix($color-end, $color-start, 34.5%) 40%,
-    mix($color-end, $color-start, 50%) 50%,
-    mix($color-end, $color-start, 65.5%) 60%,
-    mix($color-end, $color-start, 79.4%) 70%,
-    mix($color-end, $color-start, 90.5%) 80%,
-    mix($color-end, $color-start, 97.6%) 90%,
+    mix($color-end, $color-start, math.sin(90deg) * 100),
+    mix($color-end, $color-start, math.sin(80deg) * 100),
+    mix($color-end, $color-start, math.sin(70deg) * 100),
+    mix($color-end, $color-start, math.sin(60deg) * 100),
+    mix($color-end, $color-start, math.sin(50deg) * 100),
+    mix($color-end, $color-start, math.sin(40deg) * 100),
+    mix($color-end, $color-start, math.sin(30deg) * 100),
+    mix($color-end, $color-start, math.sin(20deg) * 100),
+    mix($color-end, $color-start, math.sin(10deg) * 100),
     $color-end
   );
 }
