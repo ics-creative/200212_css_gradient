@@ -1,7 +1,6 @@
 {
   "name": "200212_css_gradient",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "sass": "sass style.scss style.css -w"
